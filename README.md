@@ -68,6 +68,12 @@ pick a two-way-capable sender:
 hermes skills install SendlyHQ/hermes-sendly/sendly-sms
 ```
 
+Or via the [skills.sh](https://skills.sh) ecosystem (cross-agent — Claude Code, Cursor, Gemini, and more):
+
+```bash
+npx skills add SendlyHQ/hermes-sendly
+```
+
 ## Notes
 
 - Built against Hermes' documented platform-adapter plugin API
