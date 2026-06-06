@@ -1,0 +1,49 @@
+name: sendly
+label: SMS (Sendly)
+kind: platform
+version: 1.0.0
+description: >
+  Text your Hermes agent over SMS via Sendly. Sendly handles carrier
+  verification for you (instant international, toll-free for US/Canada), so
+  there's no approval gauntlet to send. Inbound arrives via a signed Sendly
+  webhook; replies go out through the Sendly API.
+author: Sendly
+requires_env:
+  - name: SENDLY_API_KEY
+    description: "Sendly API key (test key = sandbox, live key = real SMS)"
+    prompt: "Sendly API key"
+    url: "https://sendly.live/api-keys"
+    password: true
+  - name: SENDLY_PHONE_NUMBER
+    description: "Your Sendly sending number / sender ID (E.164 for numbers)"
+    prompt: "Sendly number or sender ID"
+    password: false
+  - name: SENDLY_WEBHOOK_SECRET
+    description: "Signing secret of the Sendly webhook pointed at this adapter (verifies X-Sendly-Signature)"
+    prompt: "Sendly webhook signing secret"
+    password: true
+optional_env:
+  - name: SENDLY_WEBHOOK_PORT
+    description: "Port the adapter's webhook server listens on (default: 8080)"
+    prompt: "Webhook port (or empty)"
+    password: false
+  - name: SENDLY_WEBHOOK_HOST
+    description: "Bind address for the webhook server (default: 0.0.0.0)"
+    prompt: "Webhook host (or empty)"
+    password: false
+  - name: SENDLY_ALLOWED_USERS
+    description: "Comma-separated E.164 numbers allowed to chat (recommended)"
+    prompt: "Allowed users (comma-separated)"
+    password: false
+  - name: SENDLY_HOME_CHANNEL
+    description: "Phone number for cron-job / proactive delivery"
+    prompt: "Home channel number (or empty)"
+    password: false
+  - name: SENDLY_BASE_URL
+    description: "Override the Sendly API base URL (default: https://sendly.live)"
+    prompt: "Base URL (or empty)"
+    password: false
+  - name: SENDLY_INSECURE_NO_SIGNATURE
+    description: "Set to true to skip webhook signature checks (LOCAL DEV ONLY)"
+    prompt: "Disable signature check? (true/empty)"
+    password: false
