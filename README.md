@@ -58,6 +58,16 @@ complete environment-variable reference, and
 [`docs/run-hermes-on-fly-with-sendly.md`](docs/run-hermes-on-fly-with-sendly.md)
 for an end-to-end deploy on Fly.io.
 
+## Optional: the Sendly SMS skill
+
+A companion Hermes **skill** teaches the agent to use Sendly SMS and OTP well —
+when to use OTP vs plain SMS, how Sendly's carrier verification works, and how to
+pick a two-way-capable sender:
+
+```bash
+hermes skills install SendlyHQ/hermes-sendly/sendly-sms
+```
+
 ## Notes
 
 - Built against Hermes' documented platform-adapter plugin API
